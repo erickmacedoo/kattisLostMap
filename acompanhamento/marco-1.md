@@ -1,6 +1,6 @@
 # Marco 1 - Formulação (H - Kattis Lost Map)
 
-**Problema:** Kattis — Lost Map (H) |
+**Problema:** Kattis - Lost Map (H) |
 **Classe:** árvore geradora mínima | 
 **Status:** concluído
 
