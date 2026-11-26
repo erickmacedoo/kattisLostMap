@@ -1,1 +1,170 @@
-dados serão aqui inseridos.
+CASOS DE TESTE - Problema H (Kattis Lost Map)
+
+Como usar: copie a parte ENTRADA de um caso para um arquivo (por exemplo, entrada.txt) e execute
+    java -cp out Main < entrada.txt
+A saída deve ser igual à SAÍDA ESPERADA. O programa imprime as estradas com o menor número
+primeiro e em ordem crescente.
+
+============================================================
+Teste 1 - Exemplo 1 do enunciado
+============================================================
+Objetivo: Conferir a leitura da matriz e o formato da saída com o exemplo oficial do Kattis.
+ 
+ENTRADA:
+4
+0 1 1 2
+1 0 2 3
+1 2 0 3
+2 3 3 0
+ 
+SAÍDA ESPERADA:
+1 2
+1 3
+1 4
+ 
+============================================================
+Teste 2 - Exemplo 2 do enunciado
+============================================================
+Objetivo: Conferir uma rede maior (7 vilarejos), também do enunciado.
+ 
+ENTRADA:
+7
+0 2 9 1 4 3 3
+2 0 11 1 6 3 3
+9 11 0 10 5 12 12
+1 1 10 0 5 2 2
+4 6 5 5 0 7 7
+3 3 12 2 7 0 4
+3 3 12 2 7 4 0
+ 
+SAÍDA ESPERADA:
+1 4
+1 5
+2 4
+3 5
+4 6
+4 7
+ 
+============================================================
+Teste 3 - Instância pequena dos marcos
+============================================================
+Objetivo: Conferir a instância usada no rastreamento manual (Marco 3). As estradas reais são 1-2, 1-3, 3-4 e 3-5.
+ 
+ENTRADA:
+5
+0 3 2 6 3
+3 0 5 9 6
+2 5 0 4 1
+6 9 4 0 5
+3 6 1 5 0
+ 
+SAÍDA ESPERADA:
+1 2
+1 3
+3 4
+3 5
+ 
+============================================================
+Teste 4 - Menor rede possível (n = 2)
+============================================================
+Objetivo: Conferir o caso mínimo: uma única estrada.
+ 
+ENTRADA:
+2
+0 5
+5 0
+ 
+SAÍDA ESPERADA:
+1 2
+ 
+============================================================
+Teste 5 - Rede em caminho
+============================================================
+Objetivo: Conferir uma rede sem ramificação (1-2-3-4), a de maior profundidade.
+ 
+ENTRADA:
+4
+0 1 3 6
+1 0 2 5
+3 2 0 3
+6 5 3 0
+ 
+SAÍDA ESPERADA:
+1 2
+2 3
+3 4
+ 
+============================================================
+Teste 6 - Rede em estrela com distâncias repetidas
+============================================================
+Objetivo: Conferir empates: vários valores iguais na matriz. A árvore mínima é única, então o resultado não muda.
+ 
+ENTRADA:
+4
+0 1 1 1
+1 0 2 2
+1 2 0 2
+1 2 2 0
+ 
+SAÍDA ESPERADA:
+1 2
+1 3
+1 4
+ 
+============================================================
+Teste 7 - Troca de parceiro no edgeTo (3 vilarejos)
+============================================================
+Objetivo: Conferir o caso em que o vilarejo 3 primeiro liga ao 1 (peso 5) e depois passa a ligar ao 2 (peso 3).
+ 
+ENTRADA:
+3
+0 2 5
+2 0 3
+5 3 0
+ 
+SAÍDA ESPERADA:
+1 2
+2 3
+ 
+============================================================
+Teste 8 - Duas trocas de parceiro (5 vilarejos)
+============================================================
+Objetivo: Conferir uma rede em que o edgeTo muda duas vezes durante o Prim (vilarejos 4 e 5).
+ 
+ENTRADA:
+5
+0 4 1 3 7
+4 0 5 7 3
+1 5 0 2 8
+3 7 2 0 10
+7 3 8 10 0
+ 
+SAÍDA ESPERADA:
+1 2
+1 3
+2 5
+3 4
+ 
+============================================================
+Teste 9 - Rede em que o vilarejo 2 é o centro
+============================================================
+Objetivo: Conferir uma rede cujo centro não é o vilarejo de partida do Prim.
+ 
+ENTRADA:
+4
+0 2 5 3
+2 0 3 1
+5 3 0 4
+3 1 4 0
+ 
+SAÍDA ESPERADA:
+1 2
+2 3
+2 4
+ 
+============================================================
+Outros testes
+============================================================
+- Tamanho máximo (n = 2500): a entrada tem cerca de 6,25 milhões de números (uns 40 MB),
+  por isso não está neste arquivo. Para testar, gere a matriz de uma rede qualquer com 2500
+  vilarejos e confira se a saída é igual à rede usada para gerá-la.
